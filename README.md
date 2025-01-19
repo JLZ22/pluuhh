@@ -7,3 +7,7 @@ This is a fun little project to get to know how Discord bots work. It is a simpl
 ## Notes
 
 1. you must have a `.env` file with the `DISCORD_TOKEN` variable set to your bot's token
+
+## Invite the bot to your server
+
+https://discord.com/oauth2/authorize?client_id=1330663644001734676&permissions=11264&integration_type=0&scope=bot
