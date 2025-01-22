@@ -26,7 +26,10 @@ async def on_message(message):
         if word in message.content.lower():
             await message.channel.send(link)
             break
-        
+
+if 'DISCORD_TOKEN' in os.environ:
+    del os.environ['DISCORD_TOKEN']    
+
 dotenv.load_dotenv()
 token = os.getenv('DISCORD_TOKEN')
 client.run(token)
