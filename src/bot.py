@@ -1,12 +1,14 @@
 import discord 
 import dotenv
 import os
+import re
 import yaml
 
 intents = discord.Intents.default()
 intents.message_content = True
 
 client = discord.Client(intents=intents)
+pluh_pattern = "plu+h+"
 
 dir = os.path.dirname(__file__)
 with open(os.path.join(dir, 'keywords.yaml'), 'r') as f:
@@ -21,9 +23,9 @@ async def on_ready():
 async def on_message(message):
     if message.author == client.user:
         return
-    
+
     for word, link in config.items():
-        if word in message.content.lower():
+        if word in message.content.lower() and re.match(pluh_pattern, message.channel.name.lower()):
             await message.channel.send(link)
             break
 

@@ -7,6 +7,7 @@ This is a fun little project to get to know how Discord bots work. It is a simpl
 ## Notes
 
 1. you must have a `.env` file with the `DISCORD_TOKEN` variable set to your bot's token
+2. This bot will only work if the message is sent in a channel whose name matches the following RegEx: `plu+h+`. 
 
 ## Invite the bot to your server
 
