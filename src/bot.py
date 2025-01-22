@@ -23,9 +23,12 @@ async def on_ready():
 async def on_message(message):
     if message.author == client.user:
         return
-
+    
+    if not re.match(pluh_pattern, message.channel.name.lower()):
+        return
+    
     for word, link in config.items():
-        if word in message.content.lower() and re.match(pluh_pattern, message.channel.name.lower()):
+        if word in message.content.lower():
             await message.channel.send(link)
             break
 
